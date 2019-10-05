@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <h1>Shopping Cart</h1>
+  <meta charset="ISO-8859-1">
+  <title>Insert title here</title>
   <link rel="Stylesheet" type="text/css" href="Styling.css"/>
 </head>
 <body>
-<form action="" method="post">
-  <div class="shopping-cart">
 
-    <!-- Title -->
+<header><h2>Shopping Website</h2></header>
 
-    <div class="title">
+<section>
+  <nav>
+    <ul id="navig">
+      <li><a href="ShoppingCart.html" target="contentFrame" onclick="applyActiveCss(this.id);" id="cart">Shopping Cart</a></li>
+      <li><a href="userinfo.html" target="contentFrame" onclick="applyActiveCss(this.id);" id="cart">User Info</a></li>
+      <li><a href="Checkout.html" target="contentFrame" onclick="applyActiveCss(this.id);" id="cart">Checkout</a></li>
+      <li><a href="Shippinginfo.html" target="contentFrame" onclick="applyActiveCss(this.id);" id="cart">Shipping Info</a></li>
 
-      Shopping Cart
 
+    </ul>
+  </nav>
+  <article class="iframe">
+    <iframe class="iframe" height="100%" width="100%" src="Main.html" name="contentFrame"></iframe>
+  </article>
+</section>
 
-    </div>
+<footer>Nothing for now</footer>
 
-    <select name="cars" multiple required>
-      <option value="Product 1">Product 1 ($1.00)</option>
-      <option value="Product 2">Product 2 ($2.00)</option>
-      <option value="Product 3">Product 3 ($3.00)</option>
-      <option value="Product 4">Product 4 ($4.00)</option>
-    </select>
-
-    Units : <br>
-    <input type="Number" name="Units" required> <br>
-
-    Units Price: <br>
-    <input type="Number" name="Unit Price" value="1.00" readonly required> <br>
-
-    Total Price: <br>
-    <input type="Number" name="Total Price" value="1.00" readonly required> <br>
-
-</form>
 </body>
 </html>
