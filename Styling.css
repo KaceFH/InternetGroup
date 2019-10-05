@@ -26,6 +26,16 @@ nav ul {
   list-style-type: none;
   padding: 0;
 }
+/* Makes the navigation links in a row*/
+#list_in_row {
+  display:flex;  
+  list-style:none;
+}
+/* Adds space inbetween the navigation bar items */
+a { 
+    display: block;
+    padding: 10px 80px;
+}
 article {
   float: left;
   padding: 20px;
