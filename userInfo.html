@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>User Info</title>
   <link rel="Stylesheet" type="text/css" href="Styling.css"/>
+  <script type="text/javascript" src="JavaScripts.js"></script>
 </head>
 
 <body>
@@ -85,10 +86,11 @@
   <input type="text" name="ZipCode" minlength="5" maxlength="9"required> <br>
 
   Phone (###-###-####) : <br>
-  <input type="text" name="Phone"  maxlength="12"required> <br>
+  <input type="phone" name="phone"   minlength="11" maxlength="12"required onblur="validatePhone(phone)"> <br>
+
 
   Email : <br>
-  <input type="email" name="Email" maxlength="100"required> <br>
+  <input type="email" name="Email" minlength="7" maxlength="100"required> <br>
 
   <input type="submit">
 
