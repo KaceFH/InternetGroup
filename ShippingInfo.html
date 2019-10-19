@@ -8,6 +8,7 @@
 <body>
 <h1>Shipping Information</h1>
 
+<form action="" method="post">
 <table style="width:20%">
   <tr>
     <td>Use previous user data?</td>
@@ -18,7 +19,7 @@
 <table style="width:70%">
   <tr>
     <td>Address 1 *</td>
-    <td><input type="text" maxlength="100" size="50"> </input></td>
+    <td><input type="text" maxlength="100" size="50" required> </input></td>
   </tr>
   <tr>
     <td>Address 2</td>
@@ -26,11 +27,11 @@
   </tr>
   <tr>
     <td>City *</td>
-    <td><input type="text" maxlength="100" size="50"></td>
+    <td><input type="text" maxlength="100" size="50" required></td>
   </tr>
   <tr>
     <td>State *</td>
-    <td><select>
+    <td><select required>
       <option value ="Alabama" >AL</option>
       <option value ="Alaska" >AK</option>
       <option value ="Arizona" >AZ</option>
@@ -86,11 +87,12 @@
   </tr>
   <tr>
     <td>Zip Code *</td>
-    <td><input type="text" maxlength="9" minlength="5" size="10"></td>
+    <td><input type="text" maxlength="9" minlength="5" size="10" required></td>
   </tr>
 </table>
 
-<button type="button">Submit</button>
+<input type="submit">
+</form>
 <p> <small>* - Required</small> <p>
 </body>
 </html>
