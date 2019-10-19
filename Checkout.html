@@ -1,67 +1,139 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <title>Checkout</title>
+
   <link rel="Stylesheet" type="text/css" href="Styling.css"/>
+
   <script type="text/javascript" src="JavaScripts.js"></script>
+
 </head>
+
 <body>
+
+
 
 <h1>Checkout</h1>
 
 
+
+
+
 <table style="widght:100%">
 
+
+
   <tr>
+
+
 
     <td>Total Shopping Amount</td>
 
+
+
     <td>$</td>
+
+
 
     <td>1</td>
 
+
+
   </tr>
 
+
+
   <tr>
+
+
 
     <td>Total Tax</td>
 
+
+
     <td>$</td>
+
+
 
     <td id="TotalTax"><script>document.getElementById("TotalTax").innerHTML = paymentTotalTax(1);</script></td>
 
+
+
   </tr>
 
+
+
   <tr>
+
+
 
     <td>Total Shipping Charges</td>
 
+
+
     <td>$</td>
+
+
 
     <td id="TotalShipping"><script>document.getElementById("TotalShipping").innerHTML = paymentShipping(1);</script></td>
 
+
+
   </tr>
+
+
 
   <tr>
 
+
+
     <td>Amount Due</td>
+
+
 
     <td>$</td>
 
-    <td id="Total"><script>document.getElementById("Total").innerHTML = paymentTotal(1,2, 3);</script></td>
+
+
+    <td id="Total"><script>document.getElementById("Total").innerHTML = paymentTotal(1,.08, .03);</script></td>
+
+
 
   </tr>
 
+
+
 </table>
+
+
 
 Payment <br>
 
+
+
 <select name="Payment"  required>
+
   <option value="Visa">Visa</option>
+
   <option value="MasterCard">MasterCard</option>
+
   <option value="American Express">American Express</option>
+
 </select>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,42 +144,82 @@ Payment <br>
 
 <table style="width:35%">
 
+
+
   <tr>
+
+
 
     <td>Card Number *<td>
 
+
+
     <td><input type="text" maxlength="16" size="25"> </input></td>
+
+
 
   </tr>
 
+
+
   <tr>
+
+
 
     <td>Card Expiration Date *<td>
 
+
+
     <td><input type="text" maxlength="3" size="5"> </input></td>
+
+
 
   </tr>
 
+
+
   <tr>
 
+
+
     <td>Agreement<td>
+
+
+
 
 
     <td>I agree and authorize the amount to be charged to my credit card."<td>
 
 
+
+
+
     <td><input type=checkbox> </input></td>
 
+
+
   </tr>
+
+
 
 </table>
 
 
 
+
+
+
+
 <button type="button"> Submit</button>
+
+
 
 <p> <small>* - Required</small> <p>
 
-<script type="text/javascript" src="JavaScripts.js"></script>
+
+
+  <script type="text/javascript" src="JavaScripts.js"></script>
+
 </body>
+
 </html>
