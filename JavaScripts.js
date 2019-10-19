@@ -27,3 +27,9 @@ function validatePhone(phoneNumber){
 		alert('Please enter a valid phone number');
 		return false;
 	}}
+
+function calculateShoppingCart(price, amount) {
+	var TotalPrice = price * amount;
+	
+	return TotalPrice;
+}
