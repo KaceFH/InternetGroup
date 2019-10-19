@@ -86,14 +86,12 @@
   <input type="text" name="ZipCode" minlength="5" maxlength="9"required> <br>
 
   Phone (###-###-####) : <br>
-  <input type="phone" name="phone"   minlength="11" maxlength="12"required onblur="validatePhone(phone)"> <br>
-
+  <input type="tel" pattern="^\d{10,12}$" required> <br>
 
   Email : <br>
   <input type="email" name="Email" minlength="7" maxlength="100"required> <br>
 
   <input type="submit">
-
 
 </form>
 
