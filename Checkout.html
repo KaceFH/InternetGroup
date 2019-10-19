@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <title>Checkout</title>
   <link rel="Stylesheet" type="text/css" href="Styling.css"/>
+  <script type="text/javascript" src="JavaScripts.js"></script>
 </head>
 <body>
-<script type="text/javascript" src="JavaScripts.js"></script>
+
 <h1>Checkout</h1>
 
 
@@ -28,7 +29,7 @@
 
     <td>$</td>
 
-    <td>2</td>
+    <td id="TotalTax"><script>document.getElementById("TotalTax").innerHTML = paymentTotalTax(1);</script></td>
 
   </tr>
 
@@ -38,7 +39,7 @@
 
     <td>$</td>
 
-    <td>3</td>
+    <td id="TotalShipping"><script>document.getElementById("TotalShipping").innerHTML = paymentShipping(1);</script></td>
 
   </tr>
 
@@ -48,7 +49,7 @@
 
     <td>$</td>
 
-    <td id="Total"><script>document.getElementById("Total").innerHTML = paymentTotal(1,2,3);</script></td>
+    <td id="Total"><script>document.getElementById("Total").innerHTML = paymentTotal(1,2, 3);</script></td>
 
   </tr>
 
