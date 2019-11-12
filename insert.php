@@ -13,9 +13,9 @@ else echo "connected!!!<br>";
 //mysqli_select_db($con);
 //  var_dump( $_POST );
 //  echo $_POST['fName'];
-$sql="INSERT INTO cs3320.userinformation (firstName, lastName, address1, address2, city, state, zip, email, notes)
+$sql="INSERT INTO userinformation (fName, lName, address1, address2, city, state, zip, phone, email)
 VALUES
-('$_POST[fName]','$_POST[lName]','$_POST[address1]','$_POST[address2]','$_POST[city]','$_POST[state]','$_POST[zip]','$_POST[email]','$_POST[notes]')";
+('$_POST[fName]','$_POST[lName]','$_POST[address1]','$_POST[address2]','$_POST[city]','$_POST[state]','$_POST[zip]','$_POST[phone]','$_POST[email]')";
 //('Test','Tester')";
 echo $sql;
 //execute the INSERT
@@ -33,3 +33,4 @@ mysqli_close($con)
 </body>
 
 </html>
+
