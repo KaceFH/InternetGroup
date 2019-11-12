@@ -9,7 +9,9 @@ if (!$con)
 $sql="select * from states;";
 //where stateCode =
 //('$_GET[stateCode]')";
+
 //echo $sql;
+
 //execute the INSERT
 $result = mysqli_query($con,$sql);
 $returnStates = "[";
