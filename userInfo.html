@@ -20,36 +20,40 @@
 
   <link rel="Ajaxfunctions.js" type="text/xml" href="Ajaxfunctions.js"/>
 
-  <script>
+  <script type="text/javascript">
 
-
-    function getStateDB() {
-
-      if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-      } else {
-        // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var stateArr = JSON.parse(this.responseText);
-          console.log(stateArr);
-          //var stateArr = JSON.parse(JSON.stringify(this.responseTest));
-          for(var i=0;i<50;i++){
-            var stateOpt = document.createElement("OPTION");
-            stateOpt.innerHTML = stateArr[i]['code'];
-            console.log(stateOpt);
-            console.log(stateArr[i]['code']);
-            document.getElementById("stateDD").appendChild(stateOpt);
-          }
+window.onload = function () {
+        alert("Please show up");
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-      };
-
-      xmlhttp.open("GET","getstates.php",true);
-      xmlhttp.send();
-    }
+        xmlhttp.onreadystatechange = function() {
+            alert("Please show up again");
+            if (this.readyState == 4 && this.status == 200) {
+              alert("Made it past second if statement");
+              var obj = eval(this.responseText);
+              alert("obj has now evaluated this.responseText");
+              var x = document.getElementById("stateDD");
+              alert("X is the id of statesDD");
+            	
+                for (i = 0; i < obj.length; i++) {
+                    alert("Now in the for loop");
+                	  var option = document.createElement('option');
+                	  option.value = obj[i].stateCode;
+                	  option.text = obj[i].stateName;
+                	  x.add(option, x[i]);
+                	}
+            }
+        };
+        alert("At the bottom");
+        xmlhttp.open("GET","getstates.php",true);
+        xmlhttp.send();
+   
+}
 
   </script>
 
@@ -69,7 +73,7 @@
 
 
 <!-- Add your site or application content here -->
-<body onload="getStateDB()">
+<body>
 
 
 <p>Hello Customer Welcome to the User Information Page </p>
@@ -98,8 +102,8 @@
 
   State : <br>
 
-  <select  type="text" id = "stateDD" name="state" >
-
+  <select type="text" id = "stateDD" name="state" >
+    <option>Apple</option>
   </select>
 
   <br>
