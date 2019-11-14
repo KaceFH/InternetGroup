@@ -1,6 +1,7 @@
 
 // AJAX - get states from database
 function showStates() {
+
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -16,7 +17,7 @@ function showStates() {
             for (i = 0; i < obj.length; i++) {
                 var option = document.createElement("option");
                 option.value = obj[i].stateCode;
-                option.text = obj[i].stateName;
+                // option.text = obj[i].stateName;
                 x.add(option, x[i]);
             }
         }
@@ -25,6 +26,4 @@ function showStates() {
     xmlhttp.send();
 
 }
-
-
 
