@@ -35,7 +35,9 @@ window.onload = function () {
             alert("Please show up again");
             if (this.readyState == 4 && this.status == 200) {
               alert("Made it past second if statement");
-              var obj = eval(this.responseText);
+              //var obj = eval(this.responseText);
+              alert('this.responseText prints out... ' + this.responseText);
+              var obj = this.responseText;
               alert("obj has now evaluated this.responseText");
               var x = document.getElementById("stateDD");
               alert("X is the id of statesDD");
