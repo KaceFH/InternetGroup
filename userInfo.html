@@ -11,20 +11,54 @@
 
   <title>User Info</title>
 
-  <link rel="Stylesheet" type="text/css" href="Styling.css"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <script type="text/javascript" src="JavaScripts.js"></script>
 
+  <link rel="Stylesheet" type="text/css" href="Styling.css"/>
+
   <link rel="Ajaxfunctions.js" type="text/xml" href="Ajaxfunctions.js"/>
 
+  <script>
 
+
+    function getStateDB() {
+
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var stateArr = JSON.parse(this.responseText);
+          console.log(stateArr);
+          //var stateArr = JSON.parse(JSON.stringify(this.responseTest));
+          for(var i=0;i<50;i++){
+            var stateOpt = document.createElement("OPTION");
+            stateOpt.innerHTML = stateArr[i]['code'];
+            console.log(stateOpt);
+            console.log(stateArr[i]['code']);
+            document.getElementById("stateDD").appendChild(stateOpt);
+          }
+        }
+      };
+
+      xmlhttp.open("GET","getstates.php",true);
+      xmlhttp.send();
+    }
+
+  </script>
 
 
 </head>
 
 
 
-<body onclick="showStates()"">
+
 
 <!--[if IE]>
 
@@ -35,7 +69,7 @@
 
 
 <!-- Add your site or application content here -->
-
+<body onload="getStateDB()">
 
 
 <p>Hello Customer Welcome to the User Information Page </p>
