@@ -37,7 +37,9 @@ while($row = mysqli_fetch_array($result)) {
 
 }
 //$returnStates = $returnStates ."]";
-echo $returnStates;
+//echo $returnStates;
+$test = "TESTTESTEST";
+echo $test;
 //return $returnStates;
 mysqli_close($con);
 ?>
