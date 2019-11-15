@@ -41,7 +41,7 @@ window.onload = function () {
               alert("obj has now evaluated this.responseText");
               var x = document.getElementById("stateDD");
               alert("X is the id of statesDD");
-            	
+            	/*
                 for (i = 0; i < obj.length; i++) {
                     alert("Now in the for loop");
                 	  var option = document.createElement('option');
@@ -49,6 +49,12 @@ window.onload = function () {
                 	  option.text = obj[i].stateName;
                 	  x.add(option, x[i]);
                 	}
+               */
+              var option = document.createElement('option');
+              option.value = obj;
+              option.text = obj;
+              x.add(option);
+              alert("Hopefully you created an option in drop down.");
             }
         };
         alert("At the bottom");
