@@ -7,7 +7,7 @@ body {
 }
 /* Style the header */
 header {
-  background-color: #666;
+  background-color: #841F27;
   padding: 30px;
   text-align: center;
   font-size: 35px;
@@ -15,21 +15,27 @@ header {
 }
 /* Create two columns/boxes that floats next to each other */
 nav {
+  background-color: #354E71;aa;
   float: up;
-  width: 100%;
+  width: 98%;
   height: 50px; /* only for demonstration, should be removed */
-  background: #ccc;
   padding: 20px;
+  font-size: 50;
 }
 /* Style the list inside the menu */
 nav ul {
+  font-size: 50;
   list-style-type: none;
   padding: 0;
+  margin-top: -5px;
 }
 /* Makes the navigation links in a row*/
 #list_in_row {
   display:flex;  
   list-style:none;
+}
+li a {
+  color: white;
 }
 /* Adds space inbetween the navigation bar items */
 a { 
@@ -39,9 +45,9 @@ a {
 article {
   float: left;
   padding: 20px;
-  width: 80%;
-  background-color: #f1f1f1;
-  height: 300px; /* only for demonstration, should be removed */
+  width: 100%;
+  background-color: #5A79A5;
+  height: 650px;
 }
 /* Clear floats after the columns */
 section:after {
@@ -65,8 +71,10 @@ footer {
 }
 .iframe {
   margin: 0;
-  padding: 0;
+  padding: 10;
   border: none;
+  height: 100;
+  width: 98%;
 }
 a{
   text-decoration: none;
