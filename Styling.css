@@ -38,6 +38,7 @@ nav ul {
 }
 li a {
   color: white;
+  text-align:center;
 }
 /* Adds space inbetween the navigation bar items */
 a { 
@@ -49,7 +50,7 @@ article {
   padding: 20px;
   width: 100%;
   background-color: #5A79A5;
-  height: 660px;
+  height: 680px;
 }
 /* Clear floats after the columns */
 section:after {
@@ -78,13 +79,14 @@ footer {
   height: 100;
   width: 98%;
 }
-a{
-  text-decoration: none;
-  color: #333;
-}
-/* mouse over link */
-a:hover {
+a:link {
   color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:hover {
+  color: black ;
+  background-color: #5A79A5;
 }
 .links {
   color: black;
