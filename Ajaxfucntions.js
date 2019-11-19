@@ -26,4 +26,3 @@ function showStates() {
     xmlhttp.send();
 
 }
-
