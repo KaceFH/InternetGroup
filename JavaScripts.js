@@ -1,6 +1,6 @@
 function paymentTotal(ShoppingAmount, Tax, ShippingCharges) {
 	var Total = ShoppingAmount + Tax + ShippingCharges;
-	
+
 	return Total;
 }
 function paymentTotalTax(ShoppingAmount) {
@@ -28,7 +28,7 @@ function validatePhone(phoneNumber){
 		return false;
 	}}
 
-function calculateShoppingCart(text) {	
+function calculateShoppingCart(text) {
 	var selection = document.getElementById("UnitsPrice");
 	var price = selection.value;
 	var amount = parseInt(text);
@@ -55,16 +55,16 @@ function setUnitsPrice() {
 
 function ValidateEmail(Email)
 {
-var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-if(inputText.value.match(mailformat))
-{
-document.form1.text1.focus();
-return true;
-}
-else
-{
-alert("You have entered an invalid email address!");
-document.form1.text1.focus();
-return false;
-}
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(inputText.value.match(mailformat))
+	{
+		document.form1.text1.focus();
+		return true;
+	}
+	else
+	{
+		alert("You have entered an invalid email address!");
+		document.form1.text1.focus();
+		return false;
+	}
 }
