@@ -27,7 +27,8 @@
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           var obj = this.responseText;
-          var split = obj.split(" ");
+          alert("obj is " + obj);
+          var split = obj.split("@");
           var x = document.getElementById("product");
           for (i = 0; i < split.length; i++) {
             var option = document.createElement('option');
