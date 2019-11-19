@@ -28,10 +28,32 @@ function validatePhone(phoneNumber){
 		return false;
 	}}
 
-function calculateShoppingCart(price, amount) {
+function calculateShoppingCart(text) {	
+	var price = 2;
+	var amount = parseInt(text);
 	var TotalPrice = price * amount;
-	
-	return TotalPrice;
+
+	document.getElementById("Total").value = TotalPrice;
+}
+
+function setUnitsPrice() {
+	var selection = document.getElementById("products");
+	var text = selection.options[selection.selectedIndex].text
+	var price = document.getElementById("UnitsPrice");
+
+	if (text.includes("1")) {
+		price.value = 1;
+	}
+	else if (text.includes("2")) {
+		price.value = 2;
+	}
+	else if (text.includes("3")) {
+		price.value = 3;
+	}
+	else {
+		price.value = "";
+	}
+
 }
 
 function ValidateEmail(Email)
