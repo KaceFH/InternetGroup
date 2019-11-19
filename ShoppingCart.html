@@ -24,11 +24,11 @@
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           var obj = this.responseText;
-          alert("obj is " + obj);
+
           var split = obj.split("@");
           var x = document.getElementById("products");
-          for (i = 0; i < split.length; i++) {
-            alert("loop stuff... " + split[i]);
+          for (i = 0; i < (split.length - 1); i++) {
+
             var option = document.createElement('option');
             option.text = split[i];
             x.add(option, x[i]);
@@ -69,10 +69,8 @@
 
 
     Products : <br>
-    <select type="text" id = "products" onchange="setUnitsPrice()""> 
-      <option value="NaN" id = "0"></option>
-      <option value="f" id = "1">audi($2)</option>
-      <option value="44" id = "2">baby($5)</option>
+    <select type="text" id = "products" onchange="setUnitsPrice()"">
+    <!-- <option value="NaN" id = "0"></option> -->
     </select><br>
 
 
@@ -91,6 +89,10 @@
     Total Price: <br>
 
     <textarea id="Total" required rows=1></textarea>
+
+    <br>
+
+    <input type="submit">
 
 
 
