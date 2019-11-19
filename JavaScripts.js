@@ -29,7 +29,8 @@ function validatePhone(phoneNumber){
 	}}
 
 function calculateShoppingCart(text) {	
-	var price = 2;
+	var selection = document.getElementById("UnitsPrice");
+	var price = selection.value;
 	var amount = parseInt(text);
 	var TotalPrice = price * amount;
 
@@ -37,22 +38,17 @@ function calculateShoppingCart(text) {
 }
 
 function setUnitsPrice() {
-	alert("YOU ARE NOW IN setUnitsPrice()");
 	var selection = document.getElementById("products");
 	var text = selection.options[selection.selectedIndex].text
 	var price = document.getElementById("UnitsPrice");
-
-	if (text.includes("1")) {
-		price.value = 1;
-	}
-	else if (text.includes("2")) {
-		price.value = 2;
-	}
-	else if (text.includes("3")) {
-		price.value = 3;
+	if (text == "") {
+		price.value = "";
 	}
 	else {
-		price.value = "";
+		var split = text.split("$");
+		var final = split[1];
+		final = final.slice(0, -1);
+		price.value = final;
 	}
 
 }
