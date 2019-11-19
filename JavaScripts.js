@@ -37,6 +37,7 @@ function calculateShoppingCart(text) {
 }
 
 function setUnitsPrice() {
+	alert("YOU ARE NOW IN setUnitsPrice()");
 	var selection = document.getElementById("products");
 	var text = selection.options[selection.selectedIndex].text
 	var price = document.getElementById("UnitsPrice");
