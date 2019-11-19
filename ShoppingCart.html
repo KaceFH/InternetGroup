@@ -1,42 +1,126 @@
 
+
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <h1>Shopping Cart</h1>
+
   <link rel="Stylesheet" type="text/css" href="Styling.css"/>
   <script type="text/javascript" src="JavaScripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="Ajaxfunctions.js" type="text/xml" href="Ajaxfunctions.js"/>
+  <script type="text/javascript">
+
+    window.onload = function () {
+
+      if (window.XMLHttpRequest) {
+
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+
+        xmlhttp = new XMLHttpRequest();
+
+      } else {
+
+        // code for IE6, IE5
+
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+      }
+
+      xmlhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+          var obj = this.responseText;
+
+          var str = obj.split(" ");
+
+          var x = document.getElementById("product");
+
+          for (i = 0; i < str.length; i++) {
+
+
+            var option = document.createElement('option');
+
+            option.text = str[i];
+
+            x.add(option, x[i]);
+
+          }
+
+        }
+
+      };
+
+      xmlhttp.open("GET","getproduct.php",true);
+
+      xmlhttp.send();
+
+    }
+
+  </script>
+
 </head>
+
 <body>
+
 <form action="" method="post">
+
   <div class="shopping-cart">
+
+
 
     <!-- Title -->
 
+
+
     <div class="title">
+
+
 
       Shopping Cart
 
 
+
+
+
     </div>
 
-    <select name="cars" multiple required>
-      <option value="Product 1">Product 1 ($1.00)</option>
-      <option value="Product 2">Product 2 ($2.00)</option>
-      <option value="Product 3">Product 3 ($3.00)</option>
-      <option value="Product 4">Product 4 ($4.00)</option>
-    </select>
+
+
+    Products : <br>
+    <select type="text" id = "product"> </select><br>
+
+
 
     <br> <br> Units : <br>
+
     <input type="Number" name="Units" required> <br>
 
+
+
     Units Price: <br>
+
     <textarea id=UnitsPrice readonly required rows=1> 1.00 </textarea> <br>
 
+
+
     Total Price: <br>
+
     <textarea id=Total readonly required rows=1></textarea>
+
     <td id="Total"><script>document.getElementById("Total").innerHTML =calculateShoppingCart(3, 7);</script></td>
 
+
+
 </form>
+
 </body>
+
 </html>
