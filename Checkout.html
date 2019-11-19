@@ -9,119 +9,128 @@
   <title>Checkout</title>
 
   <link rel="Stylesheet" type="text/css" href="Styling.css"/>
-
   <script type="text/javascript" src="JavaScripts.js"></script>
 
 </head>
 
 <body>
 
-
-
 <h1>Checkout</h1>
 
-<form action="" method="post">
-<table style="widght:100%">
+<form action="insertcheckout.php" id="mypaymentForm" method="POST">
 
+  <table style="widght:100%">
 
+    <tr>
 
-  <tr>
+      <td>Total Shopping Amount</td>
 
+      <td>$</td>
 
+      <td>1</td>
 
-    <td>Total Shopping Amount</td>
+    </tr>
 
+    <tr>
 
+      <td>Total Tax</td>
 
-    <td>$</td>
+      <td>$</td>
 
+      <td id="TotalTax"><script>document.getElementById("TotalTax").innerHTML = paymentTotalTax(1);</script></td>
 
+    </tr>
 
-    <td>1</td>
+    <tr>
 
+      <td>Total Shipping Charges</td>
 
+      <td>$</td>
 
-  </tr>
+      <td id="TotalShipping"><script>document.getElementById("TotalShipping").innerHTML = paymentShipping(1);</script></td>
 
 
+    </tr>
 
-  <tr>
+    <tr>
 
+      <td>Amount Due</td>
 
+      <td>$</td>
 
-    <td>Total Tax</td>
+      <td id="Total"><script>document.getElementById("Total").innerHTML = paymentTotal(1,.08, .03);</script></td>
 
+    </tr>
 
+  </table>
 
-    <td>$</td>
+  Payment <br>
 
+  <select name="cardType"  required>
 
+    <option value="Visa">Visa</option>
 
-    <td id="TotalTax"><script>document.getElementById("TotalTax").innerHTML = paymentTotalTax(1);</script></td>
+    <option value="MasterCard">MasterCard</option>
 
+    <option value="American Express">American Express</option>
 
+  </select>
 
-  </tr>
+  <table style="width:35%">
 
+    <tr>
 
+      <td>Card Number *<td>
 
-  <tr>
+      <td><input type="text" name = "cardNumber" pattern="^\d{16}$" size="25" required> </input></td>
 
+    </tr>
 
+    <tr>
 
-    <td>Total Shipping Charges</td>
+      <td>Card Expiration Date *<td>
 
+      <td><input type="text" name = "expDate" pattern = "^\d{4}$" required> </td>
 
 
-    <td>$</td>
 
 
 
-    <td id="TotalShipping"><script>document.getElementById("TotalShipping").innerHTML = paymentShipping(1);</script></td>
 
 
+    </tr>
 
-  </tr>
 
 
 
-  <tr>
 
 
 
-    <td>Amount Due</td>
+    <tr>
 
 
 
-    <td>$</td>
 
 
 
-    <td id="Total"><script>document.getElementById("Total").innerHTML = paymentTotal(1,.08, .03);</script></td>
 
+      <td>Agreement<td>
 
 
-  </tr>
 
 
 
-</table>
 
 
 
-<br> Payment 
 
 
 
-<select name="Payment"  required>
+      <td>I agree and authorize the amount to be charged to my credit card."<td>
 
-  <option value="Visa">Visa</option>
 
-  <option value="MasterCard">MasterCard</option>
 
-  <option value="American Express">American Express</option>
 
-</select>
 
 
 
@@ -129,6 +138,7 @@
 
 
 
+      <td><input type=checkbox required> </input></td>
 
 
 
@@ -136,78 +146,34 @@
 
 
 
+    </tr>
 
 
 
-<table style="width:35%">
 
 
 
-  <tr>
 
+  </table>
 
 
-    <td>Card Number: *<td>
 
+  <input type="submit">
 
 
-    <td><input type="text" pattern="^\d{16}$" size="25" required> </input></td>
 
+  <p> <small>* - Required</small> <p>
 
-
-  </tr>
-
-
-
-  <tr>
-
-
-
-    <td>Card Expiration Date (MMYY): *<td>
-
-
-
-      <td><input type="text" pattern = "^\d{4}$" required> </td>
-
-
-
-  </tr>
-
-
-
-  <tr>
-
-
-
-    <td>Agreement *<td>
-
-
-
-
-
-    <td>I agree and authorize the amount to be charged to my credit card."<td>
-
-
-
-
-
-    <td><input type=checkbox required> </input></td>
-
-
-
-  </tr>
-
-
-
-</table>
-
-<input type="submit">
-
-<p> <small>* - Required</small> <p>
 </form>
-  
+
+
+
 <script type="text/javascript" src="JavaScripts.js"></script>
 
+
+
 </body>
+
+
 
 </html>
