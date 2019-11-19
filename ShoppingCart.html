@@ -31,13 +31,14 @@
           var split = obj.split("@");
           var x = document.getElementById("product");
           for (i = 0; i < split.length; i++) {
+            alert("loop stuff... " + split[i]);
             var option = document.createElement('option');
             option.text = split[i];
             x.add(option, x[i]);
           }
         }
       };
-      xmlhttp.open("GET","getproduct.php",true);
+      xmlhttp.open("GET","getproducts.php",true);
       xmlhttp.send();
     }
   </script>
