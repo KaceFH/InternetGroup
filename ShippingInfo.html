@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 
 <html>
@@ -12,52 +13,28 @@
   <link rel="Ajaxfunctions.js" type="text/xml" href="Ajaxfunctions.js"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript">
-
   window.onload = function () {
-
   if (window.XMLHttpRequest) {
-
   // code for IE7+, Firefox, Chrome, Opera, Safari
-
   xmlhttp = new XMLHttpRequest();
-
   } else {
-
   // code for IE6, IE5
-
   xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
   }
-
   xmlhttp.onreadystatechange = function() {
-
   if (this.readyState == 4 && this.status == 200) {
-
   var obj = this.responseText;
-
   var str = obj.split(" ");
-
   var x = document.getElementById("stateDD");
-
   for (i = 0; i < str.length; i++) {
-
-
   var option = document.createElement('option');
-
   option.text = str[i];
-
   x.add(option, x[i]);
-
   }
-
   }
-
   };
-
   xmlhttp.open("GET","getstates.php",true);
-
   xmlhttp.send();
-
   }
   </script>
 
@@ -89,7 +66,7 @@
 
     <tr>
 
-      <td>Address 1 *</td>
+      <td>Address 1: *</td>
 
       <td><input type="text" maxlength="100" size="50" required> </input></td>
 
@@ -97,7 +74,7 @@
 
     <tr>
 
-      <td>Address 2</td>
+      <td>Address 2: </td>
 
       <td><input type="text" maxlength="100" size="50"></td>
 
@@ -105,7 +82,7 @@
 
     <tr>
 
-      <td>City *</td>
+      <td>City: *</td>
 
       <td><input type="text" maxlength="100" size="50" required></td>
 
@@ -113,14 +90,14 @@
 
     <tr>
 
-      <td> State  </td>
+      <td> State: *</td>
       <td><select type="text" id = "stateDD" name="state" > </select></td>
 
     </tr>
 
     <tr>
 
-      <td>Zip Code *</td>
+      <td>Zip Code: *</td>
 
       <td><input type="text" maxlength="9" minlength="5" size="10" required></td>
 
