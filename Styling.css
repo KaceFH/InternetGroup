@@ -7,6 +7,7 @@
 
 }
 
+
 html, body {
 
   font-family: Arial, Helvetica, sans-serif;
@@ -15,13 +16,16 @@ html, body {
 
   padding: 0;
 
+
 }
 
 /* Style the header */
 
 header {
 
+
   background-color: #841F27;
+
 
   padding: 30px;
 
@@ -37,6 +41,7 @@ header {
 
 nav {
 
+
   background-color: #354E71;aa;
 
   float: up;
@@ -48,20 +53,23 @@ nav {
   padding: 20px;
 
   font-size: 50;
-
 }
+
 
 /* Style the list inside the menu */
 
 nav ul {
 
+
   font-size: 50;
 
-  list-style-type: none;
+
 
   padding: 0;
 
+
   margin-top: -5px;
+
 
 }
 
@@ -75,11 +83,13 @@ nav ul {
 
 }
 
+
 li a {
 
   color: white;
 
   text-align:center;
+
 
 }
 
@@ -98,6 +108,7 @@ article {
   float: left;
 
   padding: 20px;
+
 
   width: 100%;
 
@@ -125,7 +136,9 @@ footer {
 
   background-color: #777;
 
+
   padding: 30px;
+
 
   text-align: center;
 
@@ -150,6 +163,7 @@ footer {
 .iframe {
 
   margin: 0;
+
 
   padding: 10;
 
@@ -176,6 +190,7 @@ a:hover {
   color: black ;
 
   background-color: #5A79A5;
+
 
 }
 
