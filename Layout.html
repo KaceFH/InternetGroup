@@ -1,70 +1,56 @@
-function paymentTotal(ShoppingAmount, Tax, ShippingCharges) {
-	var Total = ShoppingAmount + Tax + ShippingCharges;
+<!DOCTYPE html>
 
-	return Total;
-}
-function paymentTotalTax(ShoppingAmount) {
-	var TotalTax = ShoppingAmount * .08;
+<html>
 
-	return TotalTax;
-}
-function paymentShipping(ShoppingAmount) {
-	var  TotalShipping = ShoppingAmount * .03;
+<head>
 
-	return TotalShipping;
-}
+  <meta charset="ISO-8859-1">
+
+  <title>Insert title here</title>
+
+  <link rel="Stylesheet" type="text/css" href="Styling.css"/>
+
+</head>
+
+<body>
 
 
-function validatePhone(phoneNumber){
-	var phoneNumber = document.getElementById(phone).value;
 
-	var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+<header><h2>Shopping Website</h2></header>
 
-	var phoneResult = phoneRGEX.test(phoneNumber);
 
-	if(phoneResult == false)
-	{
-		alert('Please enter a valid phone number');
-		return false;
-	}}
 
-function calculateShoppingCart(text) {
-	var selection = document.getElementById("UnitsPrice");
-	var price = selection.value;
-	var amount = parseInt(text);
-	var TotalPrice = price * amount;
+<nav>
 
-	document.getElementById("Total").value = TotalPrice;
-}
+  <ul id="list_in_row" style="font-size:25px">
 
-function setUnitsPrice() {
-	var selection = document.getElementById("products");
-	var text = selection.options[selection.selectedIndex].text
-	var price = document.getElementById("UnitsPrice");
-	if (text == "") {
-		price.value = "";
-	}
-	else {
-		var split = text.split("$");
-		var final = split[1];
-		final = final.slice(0, -1);
-		price.value = final;
-	}
+    <li><a href="userinfo.html" target="contentFrame" onclick="applyActiveCss(this.id);" id="cart">User Info</a></li>
 
-}
+    <li><a href="ShoppingCart.html" target="contentFrame" onclick="applyActiveCss(this.id);" id="cart">Shopping Cart</a></li>
 
-function ValidateEmail(Email)
-{
-	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(inputText.value.match(mailformat))
-	{
-		document.form1.text1.focus();
-		return true;
-	}
-	else
-	{
-		alert("You have entered an invalid email address!");
-		document.form1.text1.focus();
-		return false;
-	}
-}
+    <li><a href="Shippinginfo.html" target="contentFrame" onclick="applyActiveCss(this.id);" id="cart">Shipping Info</a></li>
+
+    <li><a href="Checkout.html" target="contentFrame" onclick="applyActiveCss(this.id);" id="cart">Checkout</a></li>
+
+
+
+
+  </ul>
+
+</nav>
+
+<article class="iframe">
+
+  <iframe class="iframe" height="100%" width="100%" src="Main.html" name="contentFrame"></iframe>
+
+</article>
+
+
+
+<footer>Nothing for now</footer>
+
+
+
+</body>
+
+</html>
