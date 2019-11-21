@@ -1,112 +1,151 @@
+
+
 <!doctype html>
+
+
+
 <html>
 
+
+
+
+
+
+
 <head>
+
   <meta charset="UTF-8">
+
   <title>User Info</title>
-  <link rel="Stylesheet" type="text/css" href="Styling.css"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="JavaScripts.js"></script>
+  <link rel="Stylesheet" type="text/css" href="Styling.css"/>
+  <link rel="Ajaxfunctions.js" type="text/xml" href="Ajaxfunctions.js"/>
+  <script type="text/javascript">
+
+    window.onload = function () {
+
+      if (window.XMLHttpRequest) {
+
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+
+        xmlhttp = new XMLHttpRequest();
+
+      } else {
+
+        // code for IE6, IE5
+
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+      }
+
+      xmlhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+          var obj = this.responseText;
+
+          var str = obj.split(" ");
+
+          var x = document.getElementById("stateDD");
+
+          for (i = 0; i < (str.length - 1); i++) {
+
+
+            var option = document.createElement('option');
+
+            option.text = str[i];
+
+            x.add(option, x[i]);
+
+          }
+
+        }
+
+      };
+
+      xmlhttp.open("GET","getstates.php",true);
+
+      xmlhttp.send();
+
+    }
+
+  </script>
+
 </head>
 
-<body>
 <!--[if IE]>
+
+
+
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+
+
+
 <![endif]-->
 
 <!-- Add your site or application content here -->
 
-<p>Hello Customer Welcome to the User Information Page </p>
-<form action="" method="post">
-  Full Name:<br>
-  <input type="text" name="FullName" size = "100" required> <br>
+<body>
+
+<h1>User Information Page</h1>
+
+<form action="insert.php" id="myForm" method="POST">
+
+  First Name:<br>
+  <input type="text" name="fName" size = "100" required> <br>
+
+  Last Name:<br>
+  <input type="text" name="lName" size = "100" required> <br>
+
   Address 1: <br>
-  <input type="text" name="Address 1" size = "100" required> <br>
+  <input type="text" name="address1" size = "100" required> <br>
+
   Address 2: <br>
-  <input type="text" name="Address 2" size = "100" > <br>
+  <input type="text" name="address2" size = "100" > <br>
+
   Cty : <br>
-  <input type="text" name="City" size = "100" required> <br>
+  <input type="text" name="city" size = "100" required> <br>
+
   State : <br>
-  <select name="States" required>
-
-    <option value ="Alabama" >AL</option>
-    <option value ="Alaska" >AK</option>
-    <option value ="Arizona" >AZ</option>
-    <option value ="Arkansas" >AR</option>
-    <option value ="California" >CA</option>
-    <option value ="Colorado" >CO</option>
-    <option value ="Connecticut" >CT</option>
-    <option value ="Delaware" >DE</option>
-    <option value ="Florida" >FL</option>
-    <option value ="Georgia" >GA</option>
-    <option value ="Hawaii" >HI</option>
-    <option value ="Idaho" >ID</option>
-    <option value ="Illinois" >IL</option>
-    <option value ="Indiana" >IN</option>
-    <option value ="Iowa" >IA</option>
-    <option value ="Kansas" >KS</option>
-    <option value ="Kentucky" >KY</option>
-    <option value ="Louisiana" >LA</option>
-    <option value ="Maine" >ME</option>
-    <option value ="Maryland" >MD</option>
-    <option value ="Massachusetts" >MA</option>
-    <option value ="Michigan" >MI</option>
-    <option value ="Minnesota" >MN</option>
-    <option value ="Mississippi" >MS</option>
-    <option value ="Missouri" >MO</option>
-    <option value ="Montana" >MT</option>
-    <option value ="Nebraska" >NE</option>
-    <option value ="Nevada" >NV</option>
-    <option value ="New Hampshire" >NH</option>
-    <option value ="New Jersey" >NJ</option>
-    <option value ="New Mexico" >NM</option>
-    <option value ="New York" >NY</option>
-    <option value ="North Carolina" >NC</option>
-    <option value ="North Dakota" >ND</option>
-    <option value ="Ohio" >OH</option>
-    <option value ="Oklahoma" >OK</option>
-    <option value ="Oregon" >OR</option>
-    <option value ="Pennsylvania" >PA</option>
-    <option value ="Rhode Island" >RI</option>
-    <option value ="South Carolina" >SC</option>
-    <option value ="South Dakota" >SD</option>
-    <option value ="Tennessee" >TN</option>
-    <option value ="Texas" >TX</option>
-    <option value ="Utah" >UT</option>
-    <option value ="Vermont" >VT</option>
-    <option value ="Virginia" >VA</option>
-    <option value ="Washington" >WA</option>
-    <option value ="West Virginia" >WV</option>
-    <option value ="Wisconsin" >WI</option>
-    <option value ="Wyoming" >WY</option>
-
-  </select>
-  <br>
+  <select type="text" id = "stateDD" name="state" > </select><br>
 
   Zip Code : <br>
-  <input type="text" name="ZipCode" minlength="5" maxlength="9"required> <br>
+  <input type="text" name="zip" minlength="5" maxlength="9"required> <br>
 
   Phone (###-###-####) : <br>
-  <input type="tel" pattern="^\d{10,12}$" required> <br>
+  <input type="tel" name="phone" pattern="^\d{10,12}$" required> <br>
 
   Email : <br>
-  <input type="email" name="Email" minlength="7" maxlength="100"required> <br>
+  <input type="email" name="email" minlength="7" maxlength="100"required> <br>
 
   <input type="submit">
 
 </form>
 
 <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+
 <script src="js/plugins.js"></script>
+
 <script src="js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+
 <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+
+  ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+
 </script>
+
 <script src="https://www.google-analytics.com/analytics.js" async></script>
+
 </body>
 
 </html>

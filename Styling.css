@@ -1,97 +1,209 @@
+
 <!doctype css>
+
 * {
+
   box-sizing: border-box;
+
 }
+
+
 html, body {
+
   font-family: Arial, Helvetica, sans-serif;
+
   margin: 0;
+
   padding: 0;
+
+
 }
+
 /* Style the header */
+
 header {
+
+
   background-color: #841F27;
+
+
   padding: 30px;
+
   text-align: center;
+
   font-size: 35px;
+
   color: white;
+
 }
+
 /* Create two columns/boxes that floats next to each other */
+
 nav {
+
+
   background-color: #354E71;aa;
+
   float: up;
+
   width: 98%;
+
   height: 50px; /* only for demonstration, should be removed */
+
   padding: 20px;
+
   font-size: 50;
 }
+
+
 /* Style the list inside the menu */
+
 nav ul {
+
+
   font-size: 50;
-  list-style-type: none;
+
+
+
   padding: 0;
+
+
   margin-top: -5px;
+
+
 }
+
 /* Makes the navigation links in a row*/
+
 #list_in_row {
-  display:flex;  
+
+  display:flex;
+
   list-style:none;
+
 }
+
+
 li a {
+
   color: white;
+
   text-align:center;
+
+
 }
+
 /* Adds space inbetween the navigation bar items */
-a { 
-    display: block;
-    padding: 10px 80px;
+
+a {
+
+  display: block;
+
+  padding: 10px 80px;
+
 }
+
 article {
+
   float: left;
+
   padding: 20px;
+
+
   width: 100%;
+
   background-color: #5A79A5;
+
   height: 680px;
+
 }
+
 /* Clear floats after the columns */
+
 section:after {
+
   content: "";
+
   display: table;
+
   clear: both;
+
 }
+
 /* Style the footer */
+
 footer {
+
   background-color: #777;
+
+
   padding: 30px;
+
+
   text-align: center;
+
   color: white;
+
 }
+
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+
 @media (max-width: 600px) {
+
   nav, article {
+
     width: 100%;
+
     height: auto;
+
   }
+
 }
+
 .iframe {
+
   margin: 0;
+
+
   padding: 10;
+
   border: none;
+
   height: 100;
+
   width: 98%;
+
 }
+
 a:link {
+
   color: blue;
+
   background-color: transparent;
+
   text-decoration: underline;
+
 }
+
 a:hover {
+
   color: black ;
+
   background-color: #5A79A5;
+
+
 }
+
 .links {
+
   color: black;
+
 }
+
 /* selected link */
+
 .active {
+
   color: red;
+
 }
