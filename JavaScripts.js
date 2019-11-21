@@ -1,3 +1,35 @@
+function calculateShoppingCart(text) {
+	var TotalPrice = "";
+	//STILL NEED TO MAKE PRICE UPDATE WHEN GOING BACK TO SELECT ITEM AFTER INPUTTING AN ITEM WITH A TOTAL
+	if (text == "Select Item"){
+		TotalPrice = "";
+	}
+	else {
+		var selection = document.getElementById("UnitsPrice");
+		var price = selection.value;
+		var amount = parseInt(text);
+		TotalPrice = price * amount;
+
+		document.getElementById("Total").value = TotalPrice;
+	}
+}
+
+function setUnitsPrice() {
+
+	var selection = document.getElementById("products");
+	var text = selection.options[selection.selectedIndex].text
+	var price = document.getElementById("UnitsPrice");
+	if (text == "Select Item") {
+		price.value = "";
+	}
+	else {
+		var split = text.split("$");
+		var final = split[1];
+		final = final.slice(0, -1);
+		price.value = final;
+	}
+
+}
 function paymentTotal(ShoppingAmount, Tax, ShippingCharges) {
 	var Total = ShoppingAmount + Tax + ShippingCharges;
 
@@ -20,7 +52,9 @@ function validatePhone(phoneNumber){
 
 	var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
 
+
 	var phoneResult = phoneRGEX.test(phoneNumber);
+
 
 	if(phoneResult == false)
 	{
@@ -28,30 +62,7 @@ function validatePhone(phoneNumber){
 		return false;
 	}}
 
-function calculateShoppingCart(text) {
-	var selection = document.getElementById("UnitsPrice");
-	var price = selection.value;
-	var amount = parseInt(text);
-	var TotalPrice = price * amount;
 
-	document.getElementById("Total").value = TotalPrice;
-}
-
-function setUnitsPrice() {
-	var selection = document.getElementById("products");
-	var text = selection.options[selection.selectedIndex].text
-	var price = document.getElementById("UnitsPrice");
-	if (text == "") {
-		price.value = "";
-	}
-	else {
-		var split = text.split("$");
-		var final = split[1];
-		final = final.slice(0, -1);
-		price.value = final;
-	}
-
-}
 
 function ValidateEmail(Email)
 {
