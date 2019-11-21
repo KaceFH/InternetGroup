@@ -114,9 +114,10 @@
   Zip Code : <br>
   <input type="text" name="zip" minlength="5" maxlength="9"required> <br>
 
-  Phone (###-###-####) : <br>
-  <input type="tel" name="phone" pattern="^\d{10,12}$" required> <br>
-
+  Phone (###-###-####)  : <br>
+  <!--<input type="tel" name="phone" pattern="^\d{10,12}$" required> <br>
+  -->
+  <input type="tel" name="phone" pattern= "[0-9]{3}-[0-9]{3}-[0-9]{4}" required> <br>
   Email : <br>
   <input type="email" name="email" minlength="7" maxlength="100"required> <br>
 
