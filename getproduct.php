@@ -5,7 +5,7 @@ if (!$con) {
 }
 $sql = "select * from products";
 $result = mysqli_query($con, $sql);
-$returnProducts = "";
+$returnProducts = "Select Item@";
 while ($row = mysqli_fetch_array($result)) {
     $returnProducts = $returnProducts . $row['description'] . "($" . $row['unitPrice'] . ")" . "@";
 }
