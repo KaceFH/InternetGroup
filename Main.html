@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <title>Welcome</title>
-
-</head>
-
 <body>
+<!--
+<form action="login.php" method="get"> -->
+<form action="Main.php" method="get">
 
-<h2>E-Commerce Shopping Cart</h2>
-
-<h3>Select one of the links from menu to start!</h3>
-
+    <p Lognin Page />
+    <br>
+        <legend class="form-name"><h3>Login Page</h3></legend>
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="uname" id="username" placeholder="Enter Username" minlength="5" maxlength="10" required=""></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="psw" id="password" placeholder="Enter Password" minlength="6" maxlength="10" pattern=".{6,}" title="Six or more characters" required="" ></td>
+            </tr>
+        </table>
+        <input onClick="location.href='userInfo.html'" id="submit" type="button" value="Sign in">
+</form>
 </body>
-
 </html>
